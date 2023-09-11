@@ -8,6 +8,8 @@ You need 3 components as requirements to be able to run the entire workshop.
 ## Lobby and Process Builder access
 
    - If you want to subscribe to own your landscape, follow this [Documentation](https://help.sap.com/viewer/DRAFT/a331c4ef0a9d48a89c779fd449c022e7/Cloud/en-US/089a5d6f47b344e8b370460098980b9b.html) and setup your SAP Build Process Automation subaccount in Business Technology Platform.
+   
+   - If you want to complete this workshop and experiment with the free tier before fully subscribing to SAP Build Process automation, follow this [Documentation](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/get-free-access-to-sap-build-process-automation).
 
 ## SAP Desktop Agent On-premise Installation
 
