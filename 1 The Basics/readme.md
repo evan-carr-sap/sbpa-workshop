@@ -29,7 +29,7 @@ In this section, you will do basic tasks that includes:
 
 ## 3. Requirements <a name="section3"></a>
 
-- Access to a [**SBPA Tenant**]() and a **Windows machine** with On-premise components installed, are required to run the entire workshop.
+- Access to a [**SBPA Tenant**](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/0%20Onboarding%20and%20Installation) and a **Windows machine** with On-premise components installed, are required to run the entire workshop.
 - The Desktop Agent setup [Documentation](https://help.sap.com/docs/build-process-automation/sap-build-process-automation-dev/installing-and-updating-desktop-agent-3-to-run-automations?state=DRAFT&version=Dev).
 - Download the [Excel File](../2%20Automation/SalesOrdersDetails.xlsx) which would be used in the Automation.
 

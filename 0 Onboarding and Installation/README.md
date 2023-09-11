@@ -30,7 +30,7 @@ After completing these steps you will have your system ready with:
 
 Now, you have setup your environment.
 
-Continue with - [1 The Basics]()
+Continue with - [1 The Basics](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/1%20The%20Basics)
 
 ## License <a name="license"></a>
 

@@ -3,13 +3,13 @@
 In this workshop you will gain a basic understanding of SAP Build Process Automation.
 While creating a sales order management process you will learn the following topics:
 
-0. [Onboarding and Installation]() - setup your landscape
-1. [The Basics]() - create a process project
-2. [Automation]() - create a bot
-3. [Conditions and Decisions]() - maintain branches and business rules
-4. [Forms]() - design forms and approval forms
-5. [Visibility]() - get insights into your process
-6. [Run]() - release, deploy, run, monitor and check the performance
+0. [Onboarding and Installation](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/0%20Onboarding%20and%20Installation) - setup your landscape
+1. [The Basics](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/1%20The%20Basics) - create a process project
+2. [Automation](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/2%20Automation) - create a bot
+3. [Conditions and Decisions](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/3%20Conditions%20and%20Decisions) - maintain branches and business rules
+4. [Forms](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/4%20Forms) - design forms and approval forms
+5. [Visibility](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/5%20Visibility) - get insights into your process
+6. [Run](https://github.com/evan-carr-sap/sbpa-workshop/tree/main/6%20Run) - release, deploy, run, monitor and check the performance
 
 **Short scenario description:**
 Sales orders from different customers need to be handled differently based on the sales order amount. There might be a dedicated approval necessary, before the order can be placed in SAP S/4HANA.
