@@ -74,7 +74,7 @@ Environment variable is created successfully.
 
    ![00-01](./images/EnvVariableSuccess.png)
 
-## Building Automation with Activities,Controls and Data <a name="section4"></a>
+## Building Automation with Activities, Controls, and Data <a name="section4"></a>
 
 Double click on the automation **Get Order Details** which navigates to Design studio to build your automation.
 
