@@ -1,8 +1,9 @@
 # ONBOARD TO SAP BUILD PROCESS AUTOMATION LANDSCAPE
 
-You need 3 components as requirements to be able to run the entire workshop.
+You need 4 components as requirements to be able to run the entire workshop.
    - an access to an SAP Build Process Automation tenant: Lobby & Process Builder
    - a Windows machine with Desktop Agent installed 
+   - a S/4HANA system accessible via BTP Destination
    - an excel file with Business Data (Sales Orders)
 
 ## Lobby and Process Builder access
@@ -17,6 +18,15 @@ A **Windows machine** with On-premise components installed is required to run th
 
 - The Desktop Agent setup [Documentation](https://help.sap.com/docs/build-process-automation/sap-build-process-automation/installing-and-updating-desktop-agent-3-to-run-automations?state=DRAFT&version=Cloud).
 - You can also  use the [direct link to Cloud Tools](https://tools.hana.ondemand.com/#cloud)
+
+## S/4HANA Destination
+
+The S/4HANA system is used for creating the sales order during the process. Create a [HTTP Destination](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/create-http-destinations) pointing to the S/4HANA system OData service endpoint and add the following properties and values
+
+      |  Property     | Value  | 
+      |  :------------- | :------------- |
+      |  sap.applicationdevelopment.actions.enabled | true 
+      |  sap.processautomation.enabled | true
 
 ## Orders Management Excel file
 
