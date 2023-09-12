@@ -28,6 +28,7 @@ The S/4HANA system is used for creating the sales order during the process. Crea
 	  | sap.applicationdevelopment.actions.enabled | true  |
 	  | sap.processautomation.enabled              | true  |
 
+
 ## Orders Management Excel file
 
 - Download the [Excel File](../2%20Automation/SalesOrdersDetails.xlsx) which will be used in the Automation exercise.
