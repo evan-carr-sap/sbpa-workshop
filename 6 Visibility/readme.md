@@ -70,11 +70,11 @@ In this exercise you will
 
     ![12](./images/12_DataTypesChanged.png)
     
-    | Name     | Current Data Type | New Data Type |
-    | ----------- | ----------- | -------- |
-    | expectedDeliveryDate      | String      | Date
-    | orderAmount   | String        | Double
-    | orderDate   | String        | Date
+    | Name                 | Current Data Type | New Data Type |
+    |----------------------|-------------------|---------------|
+    | expectedDeliveryDate | String            | Date          |
+    | orderAmount          | String            | Double        |
+    | orderDate            | String            | Date          |
     
     ![11](./images/11_ChangeDataType.png)    
 

@@ -1,355 +1,153 @@
 ## Table of Contents
-- [Adding Form](#section1)
-  - [Create and Configure Auto-Approval Form](#section1-autoapproval)
-  - [Create and Configure Approval Form](#section1-approval)
-  - [Create and Configure Notification Form](#section1-notification)
+- [Adding an Action](#section1)
+    - [Create and Configure the BTP Destination](#section1-destination)
+    - [Create an Action Project](#section1-createproject)
+    - [Configure Action Project](#section1-actionproject)
+    - [Use Action from Process](#section1-actioncall)
 - [Summary](#summary)
 
 
-## Adding Form <a name="section1"></a>
-**Interactive forms** are created by adding text elements and input fields to a canvas. Once a form has been created, it can then be added as a start trigger for the business process or for an user approval or to send notifications in the business process.
+## Adding an Action <a name="section1"></a>
+**Actions** encapsulates APIs as actions in the business process.
 
-Currently there are two types of Forms:
-  - **Simple Form** : used for sending notification or as a start trigger of the business process. It has one pre-configured Submit button.
-  - **Approval Form** : approvals are managed by creating and adding an **Approval Form** to a business process. It has pre-configured  Approve and Reject buttons.
+Actions projects can be created in 3 different ways:
+- SAP Graph allows you to consume all business data in the form of a semantically connected data graph accessed via a single unified and powerful API
+- Any API specification available in the Business Accelerator Hub
+- Uploading a custom API specification
+    > - Only EDMX, XML, and JSON files are supported and the file size is limited to 5 MB.
+    > - Open API specification files with versions 2.x.x and 3.x.x of JSON type are supported.
 
-When creating forms, you can use different form elements for Layout and  Fields. These **Form elements** can then be added to the form canvas by dragging and dropping them.
-
-Each **Form input field** can be added to both a standard form and an approval form. These fields allow you to design and manage the information displayed to the process participant. Like whether the field will be a dropdown, or a checkbox etc. or whether the field is mandatory or not, or if has a text limit, or whether its read-only etc.
-
-In this section, you will create 3 forms:
-  - **Auto-approval Form**: this will be a simple form to inform the requestor that the sales order is approved automatically.
-  - **Supplier Approval Form**: this will be an approval form which will be send to the approvers determined by the decision table for their approval.
-  - **Notification Form**: this will be a simple form to inform the requestor whether their sales order is approved or rejected by the supplier.
-
-### Create and Configure Auto-Approval Form <a name="section1-autoapproval"></a>
-1. In the process builder, click **+** of the **if conditional flow** and select **Form > New Form**.
-
-    ![03-025](./images/03-025.png)
+### Create and Configure the BTP Destination<a name="section1-destination"></a>
+1. An HTTP Destination was already created during the prerequisites with properties. This destination will be made available from the Build Process Automation Lobby for use in Action and Business Processes.
 
 
-2. In the pop-up, do the following:
-    - Enter **Auto Approval Notification** in the **Name** box.
-    - Enter **Notification form for auto approval** in the **Description** box.
+| Property                                    | Value  |
+|:--------------------------------------------|:-------|
+| sap.applicationdevelopment.actions.enabled  | true   |
+| sap.processautomation.enabled               | true   |
+
+2. Click on **Settings** in the Build Process Automation Lobby
+
+    ![Build Process Automation Lobby Settings](images/01_Lobby.png)
+
+3. Click on **Destinations** on the left-hand panel
+
+    ![Settings Page](images/01_Settings.png)
+
+4. Click on **New Destination**
+
+    ![Destinations Page](images/01_New_Destination.png)
+
+5. Search for the destination and select it from the list
+
+    ![Select Destination](images/01_Select_Destination.png)
+
+### Create an Action Project<a name="section1-createproject"></a>
+1. In the **Lobby**, click on **Create**.
+
+    ![Lobby overview](images/02_Lobby.png)
+
+2. Click **Build an Automated Process**.
+
+    ![Create an Automated Process](images/02_Lobby_Create.png)
+
+3. Click **Actions**
+
+	![Create an Action Project](images/02_Lobby_Create_Action_Project.png)
+
+4. Click **Business Accelerator Hub**
+
+    ![Business Accelerator Hub](images/02_Lobby_Create_Action_Project_BAH.png)
+
+5. Search for '**Sales Order**' and select '**Sales Order (A2X)**'
+
+    ![Sales Order API Specification](images/02_Lobby_Create_Action_Project_BAH_Sales_Order.png)
+
+6. Click **Next**
+
+    ![Confirm Sales Order API](images/02_Lobby_Create_Action_Project_BAH_Sales_Order_Accept.png)
+
+7. In the pop-up, do the following:
+    - Enter **Project Name** of your choice but ensure that it is unique. 
+      > - If this workshop is conducted on a shared sub-account (and not on trial or free-tier) the project name has to be unique. 
+      > - Suggestion: append your User Name or User ID to the project name to make it unique. For Example: Sales Order Management XYZ.
+    - Edit the **Short Description** of your project, if you want.
     - Click **Create**.
 
-    ![03-026](./images/03-026.png)
+    ![Fill Project information ](images/02_Lobby_Create_Action_Project_BAH_Sales_Order_Accept_filled.png)
 
-3. Now you have to model the form. For that, click on *three-vertical-dots* on **Auto Approval Notification** form to open the menu and click **Open Editor**.
+### Configure Action Project <a name="section1-actionproject"></a>
 
-  ![03-027](./images/03-027.png)
+1. When the Action project opens search for '**Create**', open the dropdown menu called **Sales Order Header**, and select the **POST** option with the label **/A_SalesOrder**. Add this action to the project.
 
-4. In the Form Editor, either click or drag-and-drop **H1 Headline 1** layout on the form editor.
+    ![Select API Endpoint](images/03_Select_Action.png)
 
-  ![03-028](./images/03-028.png)
+2. In the body of the post we only want to keep the fields with the data we will use when creating the sales order. Select all fields using the checkbox at the header level of the body table and remove all fields from the table.
 
-  > the Headline layout will then be available to add text.
-    ![03-029](./images/03-029.png)
+    ![Remove Fields](images/03_Remove_Fields.png)
 
-  - Enter **Automatic Order Confirmation** as the **Headline** text.
-  - Similarly click or drag-and-drop **Paragraph** on the form editor.
+3. Add the following fields back to the Action by first clicking the plus on the body table. Then search and select the fields until all are checked. Finally, add these fields to the action.
+    - OrganizationDivision
+    - DistributionChannel
+    - SoldToParty
+    - SalesOrderType
+    - PurchaseOrderByCustomer
+    - SalesOrganization
+    ![Add Actions](images/03_Add_Actions.png)
 
-  ![03-030](./images/03-030.png)
+4. Repeat steps 2 & 3 above under the Output tab until only the required fields are returned from the action
+    - SalesOrder
+    ![Set Outputs](images/03_Set_Outputs.png)
 
-  - Enter **Your order has been received and we will send you the details as soon as the order is shipped. You can find the details of your order below, please review and verify your request:** as the **Paragraph** text.
+5. We now want to format the full URL path to our OData service and retrieve the CSRF token required for performing a POST request. Click the settings button in the upper right hand corner
 
-  - Similarly drag-and-drop another **Paragraph** and enter **Your Sales Order Details:** as the **Paragraph** text.
-  - To add input fields, drag-and-drop **Text** from the **INPUT  FIELDS** on the form editor.
+    ![Open Settings](images/03_Settings.png)
 
-  ![03-031](./images/03-031.png)
+6. Click on the CSRF menu on the left-hand panel in the settings. Then toggle the switch to enable retrieval of the CSRF token and use the endpoint '**/$metadata**'.
 
-  - In the **Field Settings** properties on the left panel, do the following:
-      - Enter **Order Number** in the **Field Name** box.
-      - Select **Read Only**.
+    ![CSRF Token Settings](images/03_CSRF.png)
 
-  ![03-032](./images/03-032.png)
+7. Click on the URL Prefix menu on the left-hand panel and set the Resource Path to '**/sap/opu/odata/sap/API_SALES_ORDER_SRV**' and click **Save** to confirm the changes.
 
-  - Continue adding more fields with following details:
-    - Once done, click on **Save**.
+    ![URL Prefix Settings](images/03_URL_Prefix.png)
 
-  | Input Field | Field Settings |
-  |---|---|
-  | Number | Name: Order Amount <br /> Read Only : checked|
-  | Date      | Name: Requested Order Delivery Date <br /> Read Only : checked|
-
-  | Layout| Text |
-  |---|---|
-  | Paragraph |If everything is ok, please press the SUBMIT button, so the process can be finalized. |
-
-  ![03-033](./images/03-033.png)
-
-  ![03-034](./images/03-034.png)
-
-5. Go back to the process builder, select **Auto Approval Notification** form and do the following:
-
-  - Click on **General** tab, and do the following:
-      - Enter **Your Order has been successfully received** in the **Subject** box.
-      - Select **Process Stared By** from process content as **Users** in **Recipients**.
-
-      ![03-035](./images/03-035.png)  
-
-  - Click on **Inputs** tab.
-  - Map the following decision table input with the process content:
-
-    | Form Input Field | Process Content |
-    |---|---|
-    | Order Amount | selectedOrder > orderAmount |
-    | Order Number | selectedOrder > orderNumber |
-    | Requested Order Delivery Date | selectedOrder > expectedDeliveryDate |
-
-    ![03-037](./images/03-037.png)  
-
-  - **Save** the process.
-
-    ![03-038](./images/03-038.png)
-
-### Create and Configure Approval Form <a name="section1-approval"></a>
-
-1. In the process builder, click **+** of the **Determine Approver** conditional flow and select **Form > New Approval Form**.
-
-    ![03-001](./images/03-001.png)
-
-2. In the pop-up, do the following:
-    - Enter **Approval Form (Supplier)** in the **Name** box.
-    - Enter **Supplier will approve or reject the sales order** in the **Description** box.
-    - Click **Create**.
-
-    ![03-002](./images/03-002.png)
-
-3. Now you have to model the form. For that, click on *three-vertical-dots* on **Approval Form (Supplier)** form to open the menu and click **Open Editor**.
-
-  ![03-003](./images/03-003.png)
-
-4. In the Form Editor, click or drag-and-drop the following layout and input fields in the given sequence on the form editor:
-
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 1 | Headline1  |Approve Sales Order|
-  | 2 | Headline2  |Customer has requested for the new order. Please review and confirm whether the requirements can be met or not. |
-  | 3 | Paragraph |Sales Order Details: |
-
-  | Sequence | Input Field   | Field Settings |
-  | ---- |----------|---|
-  | 4 | Text   | Name: Customer Name <br /> Read Only : checked|
-  | 5 | Text   | Name: Order Number <br /> Read Only : checked |
-  | 6 | Number | Name: Order Amount <br /> Read Only : checked |
-  | 7 | Date | Name: Delivery Date <br /> Read Only : checked |
-
-  ![03-003a](./images/03-003a.png)
-
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 8 | Paragraph  |Supplier Acknowledgment|
-
-  | Sequence | Input Field   | Field Settings |
-  | ---- |----------|---|
-  | 9 | Checkbox   | Name: I acknowledge that we have received your purchase order and will deliver on or before scheduled date|
-  | 10 | Text Area  | Name: Message to buyer: |
-
-   ![03-003b](./images/03-003b.png)
-
-   - Once done, click to **Save**.
-
-
-5. Go back to the process builder, select **Approval Form (Supplier)** form and do the following:
-
-  - Click on **General** tab, and do the following:
-    > you will use dynamic value from process content to define the subject.
-
-      - In the **Subject** box, enter **Review and Approve Order**
-        - then select **selectedOrder > orderNumber** from the process content.
-        - again enter **from**, then select **Order Processing Form > Customer Name** from the process content
-
-      - Select **determineApprover_Output>Email** from process content as **Users** in **Recipients**.
-      - Select **determineApprover_Output>UserGroup** from process content as **Groups** in **Recipients**.
-      > note: the recipients are determined by the decision and the output after the decision execution is collected in the determineApprover_Output data type
-
-      ![03-006](./images/03-006.png)  
-
-  - Click on **Inputs** tab.
-  - Map the following decision table input with the process content:
-
-    | Form Input Field | Process Content |
-    |---|---|
-    | Delivery Date | selectedOrder > expectedDeliveryDate |
-    | Customer Name | Order Processing Form > Customer Name |
-    | Order Amount | selectedOrder > orderAmount |
-    | Order Number | selectedOrder > orderNumber |
-
-    ![03-007](./images/03-007.png)  
-
-  - Once completed, click to **Save** the process.
-
-    ![03-008](./images/03-008.png)
-
-### Create and Configure Notification Form <a name="section1-notification"></a>
-
-1. In the process builder, click **+** of the **Approve** conditional flow of **Approval Form (Supplier)** and select **Form > New Form**.
-
-    ![03-009](./images/03-009.png)
-
-2. In the pop-up, do the following:
-    - Enter **Sales Order Notification (Approved)** in the **Name** box.
-    - Enter **Notification form to inform that the sales order is approved by the supplier** in the **Description** box.
-    - Click **Create**.
-
-    ![03-010](./images/03-010.png)
-
-3. Now you have to model the form. For that, click on *three-vertical-dots* on **Sales Order Notification (Approved)** form to open the menu and click **Open Editor**.
-
-  ![03-011](./images/03-011.png)
-
-4. In the Form Editor, click or drag-and-drop the following layout and input fields in the given sequence on the form editor:
-
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 1 | Headline1  |Order Confirmation|
-  | 2 | Paragraph  |We are happy to let you know that your order has been received and accepted for delivery. We will inform you as soon as your order has been shipped.  You can find the details of your order below, please review and verify the request:|
-
-  | Sequence | Input Field   | Field Settings |
-  | ---- |----------|---|
-  | 3 | Text Area   | Name: Message from the supplier: <br /> Read Only : checked|
-
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 4 | Paragraph  |Your Sales Order Details:|
-
-  ![03-012](./images/03-012.png)
-
-  | Sequence | Input Field   | Field Settings |
-  | ---- |----------|---|
-  | 5 | Text   | Name: Order Number <br /> Read Only : checked |
-  | 6 | Number | Name: Order Amount <br /> Read Only : checked |
-  | 7 | Date | Name: Order Delivery Date <br /> Read Only : checked |
-  | 8 | Text | Name: Order Status <br /> Read Only : checked |
-
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 9 | Paragraph  |please press the SUBMIT button, so that the process can be finalized.|
-
-  ![03-013](./images/03-013.png)
-
-  - Once done, click to **Save**.
-
-
-5. Go back to the process builder, select **Sales Order Notification (Approved)** form and do the following:
-
-  - Click on **General** tab, and do the following:
-    > you will use dynamic value from process content to define the subject.
-
-      - In the **Subject** box, enter **Your Order**
-        - then select **selectedOrder > orderNumber** from the process content.
-        - again enter **is confirmed by the supplier**,
-      - Select **Process Metadata >> Process Started By** from process content as **Users** in **Recipients**.
-
-      ![03-014](./images/03-014.png)  
-
-  - Click on **Inputs** tab.
-  - Map the following decision table input with the process content:
-
-    | Form Input Field | Process Content |
-    |---|---|
-    | Order  Number | selectedOrder > orderNumber  |
-    | Order Delivery Date | selectedOrder > expectedDeliveryDate |
-    | Message from supplier | Approval Form > Message to buyer |
-    | Order Amount | selectedOrder > Order Amount |
-    | Order Status | Order Processing Form > Order Status |
+    The Destination URL, URL Prefix, CSRF End Point, and Action End Point all work in conjunction to make the API call for creating the sales order. First, the Destination URL and URL Prefix are concatenated to form the Base URL used throughout the Action project.
+    > Base URL = Destination URL + URL Prefix
     
+    If a request is used in the Action that intends to add, delete, or modify data, a CSRF token must first be requested. The URL used for retrieving this token is the Base URL from above and the CSRF End Point defined in the settings of the Action project.
+    > CSRF URL = Base URL + CSRF End Point
+    
+    Finally, the Action request is made using the Base URL defined above and the Entity defined in the Action.
+    > Action URL = Base URL + Action Entity
 
-    ![03-015](./images/03-015.png)
+8. Now test the Action by first clicking the **Test** tab, selecting the **Destination** option, and selecting the destination imported from the dropdown menu. Proper input values must be provided to all input fields available, please use values based on your system's configuration. Click **Test** to create the sales order. The Action will return a Sales Order number if it was successful.
 
-  - Drag and drop the connection flow from **Submit** action to **End** step in the process.
+    ![Test Action](images/03_Test.png)
 
-    ![03-016](./images/03-016.png)
+9. Click the **Release** Button in the upper right-hand corner.
 
-  - Once completed, click to **Save** the process.
+    ![Release Action](images/03_Release.png)
 
-6. Repeat the above steps to create one more notification form to inform the requestor about the rejection of the sales order.  
+10. Note any changes made during the release for understanding updates between releases.
 
-    - In the process builder, click **+** of the **Reject** conditional flow of **Approval Form (Supplier)** and select **Form > New Form**.
+    ![Confirm Release](images/03_Release_Confirm.png)
 
-        ![03-017](./images/03-017.png)
+11. Click the **Publish to Library** button in the upper right-hand corner.
 
-    - In the pop-up, do the following:
-        - Enter **Sales Order Notification (Rejected)** in the **Name** box.
-        - Enter **Notification form to inform that the sales order is rejected by the supplier** in the **Description** box.
-        - Click **Create**.
+    ![Publish to Library](images/03_Publish.png)
 
-        ![03-018](./images/03-018.png)
+12. Click **Publish** to confirm to make the project available in the library.
 
-    - Now you have to model the form. For that, click on *three-vertical-dots* on **Sales Order Notification (Rejected)** form to open the menu and click **Open Editor**.
+    ![Confirm Publish](images/03_Publish_Confirm.png)
 
-    - In the Form Editor, click or drag-and-drop the following layout and input fields in the given sequence on the form editor:
+### Use Action from Process <a name="section1-actioncall"></a>
 
-      | Sequence| Layout   | Text |
-      | ---- |----------|---|
-      | 1 | Headline1  |Order Rejection|
-      | 2 | Paragraph  |We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request:|
-
-      | Sequence | Input Field   | Field Settings |
-      | ---- |----------|---|
-      | 3 | Text Area   | Name: Message from the supplier: <br /> Read Only : checked|
-
-      | Sequence| Layout   | Text |
-      | ---- |----------|---|
-      | 4 | Paragraph  |Your Sales Order Details:|
-
-        ![03-019](./images/03-019.png)
-
-      | Sequence | Input Field   | Field Settings |
-      | ---- |----------|---|
-      | 5 | Text   | Name: Order Number <br /> Read Only : checked |
-      | 6 | Number | Name: Order Amount <br /> Read Only : checked |
-      | 7 | Date | Name: Order Delivery Date <br /> Read Only : checked |
-      | 8 | Text | Name: Order Status <br /> Read Only : checked |
-
-      | Sequence| Layout   | Text |
-      | ---- |----------|---|
-      | 9 | Paragraph  |please press the SUBMIT button, so that the process can be finalized.|
-
-      ![03-020](./images/03-020.png)
-
-    - Once done, click to **Save**.
-
-    - Go back to the process builder, select **Sales Order Notification (Rejected)** form and do the following:
-
-     - Click on **General** tab, and do the following:
-        > you will use dynamic value from process content to define the subject.
-
-          - In the **Subject** box, enter **Your Order**
-            - then select **selectedOrder > orderNumber** from the process content.
-            - again enter **is rejected by the supplier**,
-          - Change the **Priority** to **High**.
-          - Select **Process Metadata >> Process Started By** from process content as **Users** in **Recipients**.
-          
-
-          ![03-021](./images/03-021.png)  
-
-      - Click on **Inputs** tab.
-      - Map the following decision table input with the process content:
-
-        | Form Input Field | Process Content |
-        |---|---|
-        | Order Status | Order Processing Form > Order Status |
-        | Order Amount | selectedOrder > orderAmount |
-        | Order  Number | selectedOrder > orderNumber  |
-        | Order Delivery Date | selectedOrder > expectedDeliveryDate |
-        | Message from supplier | Approval Form > Message to buyer |
-
-        ![03-022](./images/03-022.png)
-
-      - Drag and drop the connection flow from **Submit** action to **End** step in the process.
-
-      - Once completed, click to **Save** the process.
-
-        ![03-023](./images/03-023.png)
 
 ## SUMMARY <a name="summary"></a>
 
-###### You have successfully created and configured the simple and approval forms. These forms will be shown in the My Inbox for the users to take actions.
+###### You have successfully created and configured the action. This API call will create the Sales Order in the S/4HANA system.
 
   You are now able to:
-  - [x] Create Simple and Approval Forms.
-  - [x] Design the forms using simple layout and field controls.
-  - [x] Map the process content to the form fields.
-  - [x] Add the forms in the business process.
+  - [x] Create and use a Destination with SBPA.
+  - [x] Create and customize Action projects.
+  - [x] Call API's from a process via Actions.

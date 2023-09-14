@@ -147,10 +147,10 @@ To close the opened instance of the excel file, do the following:
 
 2.  Add Input and Output parameters as following:
 
-      |  Parameter Name     | Data type  | Parameter Type |Description
-      |  :------------- | :-------------  | :-------------- | :--------------- |
-      |  OrderNumber      | **`String`** | Input       | Recieves Order number from the Order Processing Form
-      |  selectedOrder        | **`SalesOrder`** |Output | Selected Order details are passed to the Process
+      | Parameter Name | Data type        | Parameter Type | Description                                          |
+      |:---------------|:-----------------|:---------------|:-----------------------------------------------------|
+      | OrderNumber    | **`String`**     | Input          | Recieves Order number from the Order Processing Form |
+      | selectedOrder  | **`SalesOrder`** | Output         | Selected Order details are passed to the Process     |
 
 
   ![00-05](./images/Step11-InputoutputParams.png)    
@@ -267,10 +267,12 @@ Click on **Save** to save the **Order Processing** process.
 - Click on  ![00-05](./images/TestButton.png) button.
 - Enter the parameters to test the Automation.
 
-|  Parameter     | Value  
-|  :------------- | :-------------  |
-|  Order Number      | Any order number which is available in SalesOrdersDetails Excel |
-|  OrderFilePath       |Path where the SalesOrderDetails Excel is stored in your local machine| Selected Order details are passed to the Process
+| Parameter     | Value                                                                  |
+|:--------------|:-----------------------------------------------------------------------|
+| Order Number  | Any order number which is available in SalesOrdersDetails Excel        |
+| OrderFilePath | Path where the SalesOrderDetails Excel is stored in your local machine | 
+
+Selected Order details are passed to the Process
 
 ![00-05](./images/TestButton_POnumber.png)
 

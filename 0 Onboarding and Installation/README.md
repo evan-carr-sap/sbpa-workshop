@@ -21,13 +21,14 @@ A **Windows machine** with On-premise components installed is required to run th
 
 ## S/4HANA Destination
 
+
+
 The S/4HANA system is used for creating the sales order during the process. Create a [HTTP Destination](https://help.sap.com/docs/connectivity/sap-btp-connectivity-cf/create-http-destinations) pointing to the S/4HANA system OData service endpoint and add the following properties and values
 
-      | Property                                   | Value |
-	  |:-------------------------------------------|:------|
-	  | sap.applicationdevelopment.actions.enabled | true  |
-	  | sap.processautomation.enabled              | true  |
-
+| Property                                    | Value  |
+|:--------------------------------------------|:-------|
+| sap.applicationdevelopment.actions.enabled  | true   |
+| sap.processautomation.enabled               | true   |
 
 ## Orders Management Excel file
 

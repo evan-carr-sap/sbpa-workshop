@@ -67,14 +67,14 @@ In this section, you will create 3 forms:
   - Continue adding more fields with following details:
     - Once done, click on **Save**.
 
-  | Input Field | Field Settings |
-  |---|---|
-  | Number | Name: Order Amount <br /> Read Only : checked|
-  | Date      | Name: Requested Order Delivery Date <br /> Read Only : checked|
+  | Input Field | Field Settings                                                 |
+  |-------------|----------------------------------------------------------------|
+  | Number      | Name: Order Amount <br /> Read Only : checked                  |
+  | Date        | Name: Requested Order Delivery Date <br /> Read Only : checked |
 
-  | Layout| Text |
-  |---|---|
-  | Paragraph |If everything is ok, please press the SUBMIT button, so the process can be finalized. |
+  | Layout    | Text                                                                                  |
+  |-----------|---------------------------------------------------------------------------------------|
+  | Paragraph | If everything is ok, please press the SUBMIT button, so the process can be finalized. |
 
   ![03-033](./images/03-033.png)
 
@@ -91,10 +91,10 @@ In this section, you will create 3 forms:
   - Click on **Inputs** tab.
   - Map the following decision table input with the process content:
 
-    | Form Input Field | Process Content |
-    |---|---|
-    | Order Amount | selectedOrder > orderAmount |
-    | Order Number | selectedOrder > orderNumber |
+    | Form Input Field              | Process Content                      |
+    |-------------------------------|--------------------------------------|
+    | Order Amount                  | selectedOrder > orderAmount          |
+    | Order Number                  | selectedOrder > orderNumber          |
     | Requested Order Delivery Date | selectedOrder > expectedDeliveryDate |
 
     ![03-037](./images/03-037.png)  
@@ -122,29 +122,29 @@ In this section, you will create 3 forms:
 
 4. In the Form Editor, click or drag-and-drop the following layout and input fields in the given sequence on the form editor:
 
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 1 | Headline1  |Approve Sales Order|
-  | 2 | Headline2  |Customer has requested for the new order. Please review and confirm whether the requirements can be met or not. |
-  | 3 | Paragraph |Sales Order Details: |
+  | Sequence | Layout    | Text                                                                                                            |
+  |----------|-----------|-----------------------------------------------------------------------------------------------------------------|
+  | 1        | Headline1 | Approve Sales Order                                                                                             |
+  | 2        | Headline2 | Customer has requested for the new order. Please review and confirm whether the requirements can be met or not. |
+  | 3        | Paragraph | Sales Order Details:                                                                                            |
 
-  | Sequence | Input Field   | Field Settings |
-  | ---- |----------|---|
-  | 4 | Text   | Name: Customer Name <br /> Read Only : checked|
-  | 5 | Text   | Name: Order Number <br /> Read Only : checked |
-  | 6 | Number | Name: Order Amount <br /> Read Only : checked |
-  | 7 | Date | Name: Delivery Date <br /> Read Only : checked |
+  | Sequence | Input Field | Field Settings                                 |
+  |----------|-------------|------------------------------------------------|
+  | 4        | Text        | Name: Customer Name <br /> Read Only : checked |
+  | 5        | Text        | Name: Order Number <br /> Read Only : checked  |
+  | 6        | Number      | Name: Order Amount <br /> Read Only : checked  |
+  | 7        | Date        | Name: Delivery Date <br /> Read Only : checked |
 
   ![03-003a](./images/03-003a.png)
 
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 8 | Paragraph  |Supplier Acknowledgment|
+  | Sequence | Layout    | Text                    |
+  |----------|-----------|-------------------------|
+  | 8        | Paragraph | Supplier Acknowledgment |
 
-  | Sequence | Input Field   | Field Settings |
-  | ---- |----------|---|
-  | 9 | Checkbox   | Name: I acknowledge that we have received your purchase order and will deliver on or before scheduled date|
-  | 10 | Text Area  | Name: Message to buyer: |
+  | Sequence | Input Field | Field Settings                                                                                             |
+  |----------|-------------|------------------------------------------------------------------------------------------------------------|
+  | 9        | Checkbox    | Name: I acknowledge that we have received your purchase order and will deliver on or before scheduled date |
+  | 10       | Text Area   | Name: Message to buyer:                                                                                    |
 
    ![03-003b](./images/03-003b.png)
 
@@ -169,12 +169,12 @@ In this section, you will create 3 forms:
   - Click on **Inputs** tab.
   - Map the following decision table input with the process content:
 
-    | Form Input Field | Process Content |
-    |---|---|
-    | Delivery Date | selectedOrder > expectedDeliveryDate |
-    | Customer Name | Order Processing Form > Customer Name |
-    | Order Amount | selectedOrder > orderAmount |
-    | Order Number | selectedOrder > orderNumber |
+    | Form Input Field | Process Content                       |
+    |------------------|---------------------------------------|
+    | Delivery Date    | selectedOrder > expectedDeliveryDate  |
+    | Customer Name    | Order Processing Form > Customer Name |
+    | Order Amount     | selectedOrder > orderAmount           |
+    | Order Number     | selectedOrder > orderNumber           |
 
     ![03-007](./images/03-007.png)  
 
@@ -201,31 +201,31 @@ In this section, you will create 3 forms:
 
 4. In the Form Editor, click or drag-and-drop the following layout and input fields in the given sequence on the form editor:
 
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 1 | Headline1  |Order Confirmation|
-  | 2 | Paragraph  |We are happy to let you know that your order has been received and accepted for delivery. We will inform you as soon as your order has been shipped.  You can find the details of your order below, please review and verify the request:|
+  | Sequence | Layout    | Text                                                                                                                                                                                                                                      |
+  |----------|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+  | 1        | Headline1 | Order Confirmation                                                                                                                                                                                                                        |
+  | 2        | Paragraph | We are happy to let you know that your order has been received and accepted for delivery. We will inform you as soon as your order has been shipped.  You can find the details of your order below, please review and verify the request: |
 
-  | Sequence | Input Field   | Field Settings |
-  | ---- |----------|---|
-  | 3 | Text Area   | Name: Message from the supplier: <br /> Read Only : checked|
+  | Sequence | Input Field | Field Settings                                              |
+  |----------|-------------|-------------------------------------------------------------|
+  | 3        | Text Area   | Name: Message from the supplier: <br /> Read Only : checked |
 
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 4 | Paragraph  |Your Sales Order Details:|
+  | Sequence | Layout    | Text                      |
+  |----------|-----------|---------------------------|
+  | 4        | Paragraph | Your Sales Order Details: |
 
   ![03-012](./images/03-012.png)
 
-  | Sequence | Input Field   | Field Settings |
-  | ---- |----------|---|
-  | 5 | Text   | Name: Order Number <br /> Read Only : checked |
-  | 6 | Number | Name: Order Amount <br /> Read Only : checked |
-  | 7 | Date | Name: Order Delivery Date <br /> Read Only : checked |
-  | 8 | Text | Name: Order Status <br /> Read Only : checked |
+  | Sequence | Input Field | Field Settings                                       |
+  |----------|-------------|------------------------------------------------------|
+  | 5        | Text        | Name: Order Number <br /> Read Only : checked        |
+  | 6        | Number      | Name: Order Amount <br /> Read Only : checked        |
+  | 7        | Date        | Name: Order Delivery Date <br /> Read Only : checked |
+  | 8        | Text        | Name: Order Status <br /> Read Only : checked        |
 
-  | Sequence| Layout   | Text |
-  | ---- |----------|---|
-  | 9 | Paragraph  |please press the SUBMIT button, so that the process can be finalized.|
+  | Sequence | Layout    | Text                                                                  |
+  |----------|-----------|-----------------------------------------------------------------------|
+  | 9        | Paragraph | please press the SUBMIT button, so that the process can be finalized. |
 
   ![03-013](./images/03-013.png)
 
@@ -247,13 +247,13 @@ In this section, you will create 3 forms:
   - Click on **Inputs** tab.
   - Map the following decision table input with the process content:
 
-    | Form Input Field | Process Content |
-    |---|---|
-    | Order  Number | selectedOrder > orderNumber  |
-    | Order Delivery Date | selectedOrder > expectedDeliveryDate |
-    | Message from supplier | Approval Form > Message to buyer |
-    | Order Amount | selectedOrder > Order Amount |
-    | Order Status | Order Processing Form > Order Status |
+    | Form Input Field      | Process Content                      |
+    |-----------------------|--------------------------------------|
+    | Order  Number         | selectedOrder > orderNumber          |
+    | Order Delivery Date   | selectedOrder > expectedDeliveryDate |
+    | Message from supplier | Approval Form > Message to buyer     |
+    | Order Amount          | selectedOrder > Order Amount         |
+    | Order Status          | Order Processing Form > Order Status |
     
 
     ![03-015](./images/03-015.png)
@@ -281,31 +281,31 @@ In this section, you will create 3 forms:
 
     - In the Form Editor, click or drag-and-drop the following layout and input fields in the given sequence on the form editor:
 
-      | Sequence| Layout   | Text |
-      | ---- |----------|---|
-      | 1 | Headline1  |Order Rejection|
-      | 2 | Paragraph  |We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request:|
+      | Sequence | Layout    | Text                                                                                                                                                                                                                                    |
+      |----------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+      | 1        | Headline1 | Order Rejection                                                                                                                                                                                                                         |
+      | 2        | Paragraph | We are sorry to inform you that your order cannot not be accepted. Any inconvenience caused due to refusal of order is regretted. You can find the reason of rejection and the details of your order below, please confirm the request: |
 
-      | Sequence | Input Field   | Field Settings |
-      | ---- |----------|---|
-      | 3 | Text Area   | Name: Message from the supplier: <br /> Read Only : checked|
+      | Sequence | Input Field | Field Settings                                              |
+      |----------|-------------|-------------------------------------------------------------|
+      | 3        | Text Area   | Name: Message from the supplier: <br /> Read Only : checked |
 
-      | Sequence| Layout   | Text |
-      | ---- |----------|---|
-      | 4 | Paragraph  |Your Sales Order Details:|
+      | Sequence | Layout    | Text                      |
+      |----------|-----------|---------------------------|
+      | 4        | Paragraph | Your Sales Order Details: |
 
         ![03-019](./images/03-019.png)
 
-      | Sequence | Input Field   | Field Settings |
-      | ---- |----------|---|
-      | 5 | Text   | Name: Order Number <br /> Read Only : checked |
-      | 6 | Number | Name: Order Amount <br /> Read Only : checked |
-      | 7 | Date | Name: Order Delivery Date <br /> Read Only : checked |
-      | 8 | Text | Name: Order Status <br /> Read Only : checked |
+      | Sequence | Input Field | Field Settings                                       |
+      |----------|-------------|------------------------------------------------------|
+      | 5        | Text        | Name: Order Number <br /> Read Only : checked        |
+      | 6        | Number      | Name: Order Amount <br /> Read Only : checked        |
+      | 7        | Date        | Name: Order Delivery Date <br /> Read Only : checked |
+      | 8        | Text        | Name: Order Status <br /> Read Only : checked        |
 
-      | Sequence| Layout   | Text |
-      | ---- |----------|---|
-      | 9 | Paragraph  |please press the SUBMIT button, so that the process can be finalized.|
+      | Sequence | Layout    | Text                                                                  |
+      |----------|-----------|-----------------------------------------------------------------------|
+      | 9        | Paragraph | please press the SUBMIT button, so that the process can be finalized. |
 
       ![03-020](./images/03-020.png)
 
@@ -321,20 +321,19 @@ In this section, you will create 3 forms:
             - again enter **is rejected by the supplier**,
           - Change the **Priority** to **High**.
           - Select **Process Metadata >> Process Started By** from process content as **Users** in **Recipients**.
-          
 
           ![03-021](./images/03-021.png)  
 
       - Click on **Inputs** tab.
       - Map the following decision table input with the process content:
 
-        | Form Input Field | Process Content |
-        |---|---|
-        | Order Status | Order Processing Form > Order Status |
-        | Order Amount | selectedOrder > orderAmount |
-        | Order  Number | selectedOrder > orderNumber  |
-        | Order Delivery Date | selectedOrder > expectedDeliveryDate |
-        | Message from supplier | Approval Form > Message to buyer |
+        | Form Input Field      | Process Content                      |
+        |-----------------------|--------------------------------------|
+        | Order Status          | Order Processing Form > Order Status |
+        | Order Amount          | selectedOrder > orderAmount          |
+        | Order  Number         | selectedOrder > orderNumber          |
+        | Order Delivery Date   | selectedOrder > expectedDeliveryDate |
+        | Message from supplier | Approval Form > Message to buyer     |
 
         ![03-022](./images/03-022.png)
 

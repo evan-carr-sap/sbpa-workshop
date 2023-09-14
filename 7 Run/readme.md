@@ -120,7 +120,7 @@ You can deploy business process projects from each released version of the proje
 
    > Variables allow you to reuse certain information for a given business process project deployement.
 
-   >  You use variables to pass parameters to automations. You can create variables in the Process Builder for which you can later set values when deploying the  business process project. For example, in the current use case, we create a "Filepath" variable with a string value that contains the local filepath of the Sales Orders Details Excel file used in the Automation.
+   > You use variables to pass parameters to automations. You can create variables in the Process Builder for which you can later set values when deploying the  business process project. For example, in the current use case, we create a "Filepath" variable with a string value that contains the local filepath of the Sales Orders Details Excel file used in the Automation.
 
    ![Deploy confirm first](images/Deployment/Deploy/02_Deploy_first_version.png)
 

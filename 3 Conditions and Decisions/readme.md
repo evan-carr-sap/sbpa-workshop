@@ -144,8 +144,7 @@ After data types are created, you will now configure the decision :
   - For the **Shipping Country** (first column) you will now add the expression value using *rule expression language*.
        -  click on the input text box.
        -  copy and paste this expression in the input box: **EXISTSIN ['United Kingdom' , 'India' , 'Germany']**
-      
-       
+
        > you can also use in-place context sensitive help to type the whole expression manually ase explained below. 
        -  start entering **exi**, and from the available operators select **EXISTS IN**.
 
@@ -169,10 +168,10 @@ After data types are created, you will now configure the decision :
 
   - Similarly, enter the following expressions for the respective result column (or **Then** section):
 
-       | Result Column | Expression |
-       |---|---|
-       | Email | 'your user email' |
-       | User Group | 'SO_APPROVER' |
+       | Result Column | Expression        |
+       |---------------|-------------------|
+       | Email         | 'your user email' |
+       | User Group    | 'SO_APPROVER'     |
 
     ![02-023](./images/02-023.png)
 
@@ -187,15 +186,15 @@ After data types are created, you will now configure the decision :
     - Click **Save**
     > Save will both save and activate the decision table. If there are any validation issues in the decision table, then Save will not happen and the errors will be shown in the **Design Console**
 
-    | Condition Column | Value |
-    |---|---|
-    | Shipping Country |  |
-    | Order Amount | >100000 |
+    | Condition Column | Value   |
+    |------------------|---------|
+    | Shipping Country |         |
+    | Order Amount     | >100000 |
 
-    | Action Column | Value |
-    |---|---|
-    | UserGroup | 'SO_MGMNT' |
-    | Email | 'your user email' |
+    | Action Column | Value             |
+    |---------------|-------------------|
+    | UserGroup     | 'SO_MGMNT'        |
+    | Email         | 'your user email' |
 
     ![02-025](./images/02-025.png)
 
@@ -209,14 +208,14 @@ After you have created and configured decision, next you have to map the input o
         
     - Map the following decision table input with the process content:
 
-        | Decision Input Field | Process Content |
-        |---|---|
+        | Decision Input Field | Process Content                      |
+        |----------------------|--------------------------------------|
         | expectedDeliveryDate | selectedOrder > expectedDeliveryDate |
-        | orderAmount | selectedOrder > orderAmount |
-        | orderDate | selectedOrder > orderDate |
-        | orderNumber | selectedOrder > orderNumber |
-        | orderStatus | selectedOrder > orderStatus |
-        | shippingCountry | selectedOrder > shippingCountry |
+        | orderAmount          | selectedOrder > orderAmount          |
+        | orderDate            | selectedOrder > orderDate            |
+        | orderNumber          | selectedOrder > orderNumber          |
+        | orderStatus          | selectedOrder > orderStatus          |
+        | shippingCountry      | selectedOrder > shippingCountry      |
 
         ![02-026](./images/02-026.png)  
 
