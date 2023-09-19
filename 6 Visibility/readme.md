@@ -121,7 +121,7 @@ We are ready!
 
 ## Summary 
 
-You have now configured a visibility scenario which is related to your process. Based on this configuration a dashboard will be created which you can use the measure the performance, but to also get deep insights into single instances and even trigger actions. Remark: the creation of actions we have not covered here.
+You have now configured a visibility scenario which is related to your process. Based on this configuration a dashboard will be created which you can use the measure the performance, but to also get deep insights into single instances and even trigger actions.
 
 You are now able to:
 - [x] Prepare your process

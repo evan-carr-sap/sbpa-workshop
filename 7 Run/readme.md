@@ -212,17 +212,22 @@ You can deploy business process projects from each released version of the proje
 
    >We have accessed the tasks now directly via the design environment. Of course, in real life this would most likely not be the case. The tasks will be accessed, for example, via the launchpad. Please follow the next steps to do so.
 
-### Access the Task via the Launchpad ###
+[//]: # (### Access the Task via the Launchpad ###)
 
-1. Access the [launchpad via this URL](https://sap-adoption-bootcamps.launchpad.cfapps.sap.hana.ondemand.com/site?siteId=955152a5-9685-45f6-8168-05ca15b6e600#Shell-home).
+[//]: # ()
+[//]: # (1. Access the launchpad via this URL)
 
-2. Access and open the **My Inbox** application.
+[//]: # ()
+[//]: # (2. Access and open the **My Inbox** application.)
 
-   ![07](./images/07_MyInbox_Launchpad.png)
+[//]: # ()
+[//]: # (   ![07]&#40;./images/07_MyInbox_Launchpad.png&#41;)
 
-3. Select **your task** and perform the actions as done before.
+[//]: # ()
+[//]: # (3. Select **your task** and perform the actions as done before.)
 
-   ![08](./images/08_MyInbox_Launchpad_Tasks.png)
+[//]: # ()
+[//]: # (   ![08]&#40;./images/08_MyInbox_Launchpad_Tasks.png&#41;)
 
 
 ## Monitor Process and Automation <a name="section8"></a>

@@ -8,7 +8,7 @@ While creating a sales order management process you will learn the following top
 2. [Automation](2%20Automation/readme.md) - create a bot
 3. [Conditions and Decisions](3%20Conditions%20and%20Decisions/readme.md) - maintain branches and business rules
 4. [Forms](4%20Forms/readme.md) - design forms and approval forms
-5. [Action](5%20Action/readme.md)
+5. [Actions](5%20Action/readme.md) - Make API requests from your process
 5. [Visibility](6%20Visibility/readme.md) - get insights into your process
 6. [Run](7%20Run/readme.md) - release, deploy, run, monitor and check the performance
 

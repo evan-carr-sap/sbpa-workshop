@@ -95,19 +95,27 @@ Actions projects can be created in 3 different ways:
     - SalesOrganization
     ![Add Actions](images/03_Add_Actions.png)
 
-4. Repeat steps 2 & 3 above under the Output tab until only the required fields are returned from the action
+4. Click on the following fields and toggle on the **Static** option and provide relevant values for your system.
+    - OrganizationDivision
+    - DistributionChannel
+    - SoldToParty
+    - SalesOrderType
+    - SalesOrganization
+    ![Set Static Values](images/03_Static_Values.png)
+
+5. Repeat steps 2 & 3 above under the Output tab until only the required fields are returned from the action
     - SalesOrder
     ![Set Outputs](images/03_Set_Outputs.png)
 
-5. We now want to format the full URL path to our OData service and retrieve the CSRF token required for performing a POST request. Click the settings button in the upper right hand corner
+6. We now want to format the full URL path to our OData service and retrieve the CSRF token required for performing a POST request. Click the settings button in the upper right hand corner
 
     ![Open Settings](images/03_Settings.png)
 
-6. Click on the CSRF menu on the left-hand panel in the settings. Then toggle the switch to enable retrieval of the CSRF token and use the endpoint '**/$metadata**'.
+7. Click on the CSRF menu on the left-hand panel in the settings. Then toggle the switch to enable retrieval of the CSRF token and use the endpoint '**/$metadata**'.
 
     ![CSRF Token Settings](images/03_CSRF.png)
 
-7. Click on the URL Prefix menu on the left-hand panel and set the Resource Path to '**/sap/opu/odata/sap/API_SALES_ORDER_SRV**' and click **Save** to confirm the changes.
+8. Click on the URL Prefix menu on the left-hand panel and set the Resource Path to '**/sap/opu/odata/sap/API_SALES_ORDER_SRV**' and click **Save** to confirm the changes.
 
     ![URL Prefix Settings](images/03_URL_Prefix.png)
 
@@ -120,28 +128,55 @@ Actions projects can be created in 3 different ways:
     Finally, the Action request is made using the Base URL defined above and the Entity defined in the Action.
     > Action URL = Base URL + Action Entity
 
-8. Now test the Action by first clicking the **Test** tab, selecting the **Destination** option, and selecting the destination imported from the dropdown menu. Proper input values must be provided to all input fields available, please use values based on your system's configuration. Click **Test** to create the sales order. The Action will return a Sales Order number if it was successful.
+9. Now test the Action by first clicking the **Test** tab, selecting the **Destination** option, and selecting the destination imported from the dropdown menu. Proper input values must be provided to all input fields available, please use values based on your system's configuration. Click **Test** to create the sales order. The Action will return a Sales Order number if it was successful.
 
     ![Test Action](images/03_Test.png)
 
-9. Click the **Release** Button in the upper right-hand corner.
+10. Click the **Release** Button in the upper right-hand corner.
 
-    ![Release Action](images/03_Release.png)
+     ![Release Action](images/03_Release.png)
 
-10. Note any changes made during the release for understanding updates between releases.
+11. Note any changes made during the release for understanding updates between releases.
 
     ![Confirm Release](images/03_Release_Confirm.png)
 
-11. Click the **Publish to Library** button in the upper right-hand corner.
+12. Click the **Publish to Library** button in the upper right-hand corner.
 
     ![Publish to Library](images/03_Publish.png)
 
-12. Click **Publish** to confirm to make the project available in the library.
+13. Click **Publish** to confirm to make the project available in the library.
 
     ![Confirm Publish](images/03_Publish_Confirm.png)
 
 ### Use Action from Process <a name="section1-actioncall"></a>
 
+1. In your Sales Order Management project, open the Order Processing process and click the plus after the Auto Approval Notification to open the Action Project Library.
+
+    ![Browse Library](images/04_Browse_Library.png)
+
+2. Search for your Action and ensure it is from the Action project you created. Then, click **Add** to add it to your process.
+
+    ![Add Action](images/04_Add_Project.png)
+
+3. Select the action added to the project, then open the dropdown menu for the Destination variable and click **+ Create Destination Variable**
+
+    ![Create Destination Variable](images/04_Create_Destination_Variable.png)
+
+4. Give the destination the name '**S4HANA**' and description '**Destination for the S4HANA system**'. Then click **Create** to create the destination variable.
+
+    ![Name Destination Variable](images/04_Name_Destination_Variable.png)
+
+5. Click on the **Run step on behalf of** option and select the notification form. This calls the API endpoint with principal propagation to the S/4HANA system.
+
+    ![Run Step on Behalf of](images/04_On_Behalf_Of.png)
+
+6. Set the input for **PurchaseOrderByCustomer** to **orderNumber**.
+
+    ![Action Inputs](images/04_Set_Inputs.png)
+
+7. Repeat steps 1-6 for calling an action after the manually approved sales order branch.
+
+    ![Repeat after Manual Approval](images/04_Repeat_for_Approval.png)
 
 ## SUMMARY <a name="summary"></a>
 
